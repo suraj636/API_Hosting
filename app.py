@@ -9,6 +9,11 @@ class Numbers(BaseModel):
     num1: float
     num2: float
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the calculator API!"}
+
+
 # Defining the route for addition
 @app.post("/add")
 def add(numbers: Numbers):
